@@ -22,6 +22,12 @@ class AnimalDataset(Dataset):
             idx = idx.tolist()
         img_name = os.path.join(self.directory_name, self.all_images[idx])
         image = cv2.imread(img_name)
-        #image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-        image = image / 255.0
-        return image
+        gaussian = np.random.normal(0, 10 ** 0.5, (512, 512))
+        noisy_image = np.zeros(image.shape, np.float32)
+        noisy_image[:, :, 0] = image[:, :, 0] + gaussian
+        noisy_image[:, :, 1] = image[:, :, 1] + gaussian
+        noisy_image[:, :, 2] = image[:, :, 2] + gaussian
+        if self.transform:
+            image = self.transform(image)
+            noisy_image = self.transform(noisy_image)
+        return noisy_image, image
