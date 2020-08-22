@@ -16,7 +16,7 @@ dataset = AnimalDataset("./dataset",
 
 
 dataloader = DataLoader(dataset, batch_size=BATCH_SIZE)
-epochs = 20
+epochs = 30
 
 model = Autoencoder().cuda()
 criterion = nn.MSELoss()
@@ -37,4 +37,4 @@ for epoch in range(epochs):
         epoch_loss += loss.data.cpu().numpy()
     print(f"epoch ::: {epoch}   loss ::: {epoch_loss}")
 
-torch.save(model.state_dict(), "./trained_model7/trained_weights.h5")
+torch.save(model.state_dict(), "./trained_model8/trained_weights.h5")
