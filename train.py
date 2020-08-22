@@ -16,7 +16,7 @@ dataset = AnimalDataset("./dataset",
 
 
 dataloader = DataLoader(dataset, batch_size=BATCH_SIZE)
-epochs = 30
+epochs = 20
 
 model = Autoencoder().cuda()
 criterion = nn.MSELoss()
