@@ -1,7 +1,6 @@
 =====================================================================
 to run clustering functionality. This will create k no of folders and
 arrange the image accordingly
-=====================================================================
 
 python cluster.py k target_folder
 
@@ -13,7 +12,6 @@ python cluster 4 ./testing
 =====================================================================
 To run search functionality run. This is search through the dataset and
 find similary images.
-=====================================================================
 
 python infer_faiss.py k target_folder
 
