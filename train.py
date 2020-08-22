@@ -9,6 +9,7 @@ from custom_transforms import ReSize, ToTensor, Blurr, Sharpen
 
 
 BATCH_SIZE = 24
+## create dataset instance
 dataset = AnimalDataset("./dataset",
                         transform=transforms.Compose([
                            ToTensor()
